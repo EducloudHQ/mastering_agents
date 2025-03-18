@@ -71,6 +71,10 @@ class AgentsIntroStack(Stack):
             api_schema=ApiSchema.from_local_asset("./lambda/openapi.json"),
         )
 
+        agent.add_alias(
+            alias_name="todo_agent_alias", description="Alias for description"
+        )
+
         agent.add_action_group(action_group)
         pineconevs = PineconeVectorStore(
             connection_string='https://ai-learning-app-kb-pbfqwcb.svc.aped-4627-b74a.pinecone.io',
